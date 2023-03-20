@@ -6,7 +6,7 @@
 */
 
 #ifndef LI_CONSTANTS_H_
-#define LI_CONSTANTS_H_
+    #define LI_CONSTANTS_H_
 
 static const int err = 84;
 static const int error = 84;

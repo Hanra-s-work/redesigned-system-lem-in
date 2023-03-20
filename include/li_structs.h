@@ -6,10 +6,9 @@
 */
 
 #ifndef LI_STRUCTS_H_
-#define LI_STRUCTS_H_
+    #define LI_STRUCTS_H_
 
-typedef struct passer_s
-{
+typedef struct passer_s {
     int status;
 } passer_t;
 

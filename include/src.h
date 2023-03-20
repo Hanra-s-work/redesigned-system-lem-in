@@ -6,7 +6,7 @@
 */
 
 #ifndef SRC_H_
-#define SRC_H_
+    #define SRC_H_
 
 int sub_main(int argc, char **argv);
 #endif

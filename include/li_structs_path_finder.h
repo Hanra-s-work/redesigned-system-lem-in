@@ -6,10 +6,9 @@
 */
 
 #ifndef LI_STRUCTS_PATH_FINDER_H_
-#define LI_STRUCTS_PATH_FINDER_H_
+    #define LI_STRUCTS_PATH_FINDER_H_
 
-typedef struct path_finder_s
-{
+typedef struct path_finder_s {
     int status;
 } path_finder_t;
 
