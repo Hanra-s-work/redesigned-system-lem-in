@@ -35,9 +35,9 @@ jobs:
       with:
         fetch-depth: 0
     - name: assign execution rights to check.sh
-      run: chmod +x ./check.sh
+      run: chmod +x ./$CODING_STYLE_CHECKER
     - name: run check.sh
-      run: ./check.sh $(pwd) $(pwd)
+      run: ./$CODING_STYLE_CHECKER $(pwd) $(pwd)
     - name: checking the results
       run: chmod +x ./$BASH_CHECKER && ./$BASH_CHECKER
 
