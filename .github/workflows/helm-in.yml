@@ -7,12 +7,12 @@ on:
   pull_request:
     branches-ignore:
     - "ga-ignore-*"
-    # schedule:
-    # - '8 0 * *'
-    # - '12 0 * *'
-    # - '20 0 * *'
-    # - '21 0 * *'
-    # - '23 0 * *'
+  schedule:
+  - cron: '8 0 * * *'
+  - cron: '12 0 * * *'
+  - cron: '20 0 * * *'
+  - cron: '21 0 * * *'
+  - cron: '23 0 * * *'
 
 env:
   SOURCE: Hanra-s-work/redesigned-system-lem-in
@@ -28,60 +28,60 @@ env:
 
 jobs:
 
-  # check_coding_style:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #     with:
-  #       fetch-depth: 0
-  #   - name: assign execution rights to check.sh
-  #     run: chmod +x ./check.sh
-  #   - name: run check.sh
-  #     run: ./check.sh $(pwd) $(pwd)
-  #   - name: checking the results
-  #     run: chmod +x ./$BASH_CHECKER && ./$BASH_CHECKER
+  check_coding_style:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: assign execution rights to check.sh
+      run: chmod +x ./check.sh
+    - name: run check.sh
+      run: ./check.sh $(pwd) $(pwd)
+    - name: checking the results
+      run: chmod +x ./$BASH_CHECKER && ./$BASH_CHECKER
 
-  # check_if_compiles:
-  #   runs-on: ubuntu-latest
-  #   needs: check_coding_style
-  #   if: success()
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #     with:
-  #       fetch-depth: 0
-  #   - name: Compile program
-  #     run: chmod +x $COMPILATION_CHECKER && ./$COMPILATION_CHECKER
+  check_if_compiles:
+    runs-on: ubuntu-latest
+    needs: check_coding_style
+    if: success()
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Compile program
+      run: chmod +x $COMPILATION_CHECKER && ./$COMPILATION_CHECKER
 
-  # check_functional_tests:
-  #   runs-on: ubuntu-latest
-  #   needs: check_if_compiles
-  #   if: success()
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #     with:
-  #       fetch-depth: 0
-  #   - name: Compile program
-  #     run: make NAME=$EXECUTABLE
-  #   - name: run_tests
-  #     run: |
-  #       OLD_DIR="$FUNCTIONAL_TESTS_PATH"
-  #       NEW_DIR=""
-  #       for dir in $(echo $OLD_DIR | tr "/" "\n"); do
-  #         if [ "$dir" == "." ]; then
-  #           NEW_DIR+="./"
-  #         else
-  #           NEW_DIR+="../"
-  #         fi
-  #       done
-  #       cd $FUNCTIONAL_TESTS_PATH
-  #       chmod +x $FUNCTIONAL_TESTS_NAME
-  #       cp $NEW_DIR/$EXECUTABLE ./$EXECUTABLE
-  #       ./$FUNCTIONAL_TESTS_NAME ./$EXECUTABLE
+  check_functional_tests:
+    runs-on: ubuntu-latest
+    needs: check_if_compiles
+    if: success()
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Compile program
+      run: make NAME=$EXECUTABLE
+    - name: run_tests
+      run: |
+        OLD_DIR="$FUNCTIONAL_TESTS_PATH"
+        NEW_DIR=""
+        for dir in $(echo $OLD_DIR | tr "/" "\n"); do
+          if [ "$dir" == "." ]; then
+            NEW_DIR+="./"
+          else
+            NEW_DIR+="../"
+          fi
+        done
+        cd $FUNCTIONAL_TESTS_PATH
+        chmod +x $FUNCTIONAL_TESTS_NAME
+        cp $NEW_DIR/$EXECUTABLE ./$EXECUTABLE
+        ./$FUNCTIONAL_TESTS_NAME ./$EXECUTABLE
 
   repository_mirroring:
     runs-on: ubuntu-latest
-    # needs: check_if_compiles
-    # if: success()
+    needs: check_if_compiles
+    if: success()
     steps:
     - uses: actions/checkout@v3
       with:
