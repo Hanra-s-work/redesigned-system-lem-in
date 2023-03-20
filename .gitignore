@@ -26,3 +26,4 @@ vgcore.*
 # Le binaire
 bin/*
 lem_in
+helm_in
