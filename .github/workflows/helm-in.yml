@@ -39,7 +39,11 @@ jobs:
     - name: run check.sh
       run: ./$CODING_STYLE_CHECKER $(pwd) $(pwd)
     - name: checking the results
-      run: chmod +x ./$BASH_CHECKER && ./$BASH_CHECKER
+      run: |
+        chmod +x ./$BASH_CHECKER
+        ls
+        cat coding-style-reports.log
+        ./$BASH_CHECKER
 
   check_if_compiles:
     runs-on: ubuntu-latest
@@ -52,8 +56,6 @@ jobs:
     - name: Compile program
       run: |
         chmod +x $COMPILATION_CHECKER
-        ls
-        cat coding-style-reports.log
         ./$COMPILATION_CHECKER
 
   check_functional_tests:
