@@ -8,11 +8,11 @@ on:
     branches-ignore:
     - "ga-ignore-*"
   schedule:
-  - "8 0 * *"
-  - "12 0 * *"
-  - "20 0 * *"
-  - "21 0 * *"
-  - "23 0 * *"
+  - '8 0 * *'
+  # - '12 0 * *'
+  # - '20 0 * *'
+  # - '21 0 * *'
+  # - '23 0 * *'
 
 env:
   SOURCE: Hanra-s-work/redesigned-system-lem-in
