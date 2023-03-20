@@ -1,0 +1,28 @@
+# Fichiers temporaires
+
+*~
+*#
+\#*#
+
+# Fichiers de compilation
+
+*.o
+
+# les archives
+*.a
+
+# les fichiers de gestion de mémoire
+vgcore.*
+
+# Fichiers journaux
+
+*.log
+*vgcore
+
+# Le dossier de config de vscode
+.vscode/*
+**/.vscode/*
+
+# Le binaire
+bin/*
+lem_in
