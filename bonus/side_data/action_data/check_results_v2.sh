@@ -1,5 +1,6 @@
 #!/bin/bash
 # (c) Written by Henry Letellier
+cat coding-style-reports.log
 CONTENT="$(cat coding-style-reports.log)"
 ILLEGAL_FILES_FOUND=0
 while IFS= read -r LINE; do
