@@ -1,7 +1,7 @@
 #!/bin/bash
 # (c) Written by Henry Letellier
 CONTENT="$(cat coding-style-reports.log)"
-if [ ${#CONTENT} -eq 0 ]; then
+if [ "${#CONTENT}" -eq 0 ]; then
     echo "::success file='',line=1,endLine=0,title=No coding style error detected"
     exit 0
 fi

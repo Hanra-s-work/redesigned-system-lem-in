@@ -24,17 +24,17 @@ function test_command {
     return $STATUS
 }
 
-COMMAND='make NAME=helm_in fclean'
+COMMAND='make fclean'
 test_command $COMMAND
-COMMAND='make NAME=helm_in'
+COMMAND='make'
 test_command $COMMAND
-COMMAND='make NAME=helm_in clean'
+COMMAND='make clean'
 test_command $COMMAND
-COMMAND='make NAME=helm_in fclean'
+COMMAND='make fclean'
 test_command $COMMAND
-COMMAND='make NAME=helm_in debug'
+COMMAND='make debug'
 test_command $COMMAND
-COMMAND='make NAME=helm_in fclean'
+COMMAND='make fclean'
 test_command $COMMAND
-COMMAND='make NAME=helm_in re'
+COMMAND='make re'
 test_command $COMMAND

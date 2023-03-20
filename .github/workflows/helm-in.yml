@@ -17,7 +17,7 @@ on:
 env:
   SOURCE: Hanra-s-work/redesigned-system-lem-in
   MIRROR: "EpitechPromo2027/B-CPE-200-PAR-2-1-lemin-thomas.lebouc"
-  EXECUTABLE: "helm_in"
+  EXECUTABLE: "lem_in"
   EPITEST_DOCKER: ghcr.io/epitech/coding-style-checker:latest
   GITHUB_SSH_KEY: ${{ secrets.MY_LEM_IN_PRIVATE_SSH_KEY }}
   BASH_CHECKER: bonus/side_data/action_data/check_results_v2.sh
@@ -67,7 +67,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Compile program
-      run: make NAME=$EXECUTABLE
+      run: make
     - name: run_tests
       run: |
         OLD_DIR="$FUNCTIONAL_TESTS_PATH"
