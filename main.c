@@ -5,7 +5,9 @@
 ** lem_in
 */
 
+#include "src.h"
+
 int main(int ac, char **av)
 {
-    return 0;
+    return sub_main(ac, av);
 }

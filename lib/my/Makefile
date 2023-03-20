@@ -36,7 +36,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(COPY) my.h ../../include/
-	ar rc $(NAME) $(OBJ)
+	$(SILENT)ar rc $(NAME) $(OBJ)
 	$(COPY) $(NAME) ../$(NAME)
 	$(COPY) $(NAME) ../../$(NAME)
 

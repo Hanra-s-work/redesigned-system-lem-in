@@ -11,15 +11,19 @@ MAK	=	$(SILENT)make -C
 
 all:
 	$(MAK) ./my
+	$(MAK) ./linked_lists
 
 clean:
 	$(MAK) ./my clean
+	$(MAK) ./linked_lists clean
 
 fclean:
 	$(MAK) ./my fclean
+	$(MAK) ./linked_lists fclean
 
 debug:
 	$(MAK) ./my debug
+	$(MAK) ./linked_lists debug
 
 re: fclean all
 

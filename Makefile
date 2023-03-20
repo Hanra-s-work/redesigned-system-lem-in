@@ -5,7 +5,8 @@
 ## mul
 ##
 
-SRC	=	./src/main.c	\
+SRC	=	./main.c	\
+		./src/sub_main.c	\
 
 SILENT	=	@
 
@@ -23,7 +24,8 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	lem_in
 
-LIBFLAGS	=	-Llib/my/ -lmy
+LIBFLAGS	=	-Llib/my/ -lmy	\
+				-Llib/linked_lists -llinklist
 
 all:	$(NAME)
 
@@ -37,8 +39,13 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(NAME)_debug
 	$(MAK) ./lib fclean
 
 re: fclean all
 
-.PHONY: re fclean clean all
+debug: CFLAGS	+=	-g3
+debug: NAME	:=	$(NAME)_debug
+debug: clean all
+
+.PHONY: re fclean clean all debug
