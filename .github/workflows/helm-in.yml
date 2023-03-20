@@ -50,7 +50,11 @@ jobs:
       with:
         fetch-depth: 0
     - name: Compile program
-      run: chmod +x $COMPILATION_CHECKER && ./$COMPILATION_CHECKER
+      run: |
+        chmod +x $COMPILATION_CHECKER
+        ls
+        cat coding-style-reports.log
+        ./$COMPILATION_CHECKER
 
   check_functional_tests:
     runs-on: ubuntu-latest
