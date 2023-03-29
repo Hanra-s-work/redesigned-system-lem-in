@@ -7,6 +7,7 @@
 
 SRC	=	./main.c	\
 		./src/sub_main.c	\
+		./src/parsing/get/get_file_content.c	\
 
 SILENT	=	@
 
