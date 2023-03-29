@@ -12,7 +12,7 @@
 #include "linked_lists.h"
 
 
-linked_lists_t *get_file_content(char const *filepath)
+linked_lists_t *get_file_content(void)
 {
     size_t size = 0;
     int size_read = 0;
@@ -27,9 +27,9 @@ linked_lists_t *get_file_content(char const *filepath)
         }
         line[size_read - 1] = '\0';
         if (file_content != NULL) {
-            file_content = init_list((void *)my_strdup(line), STRING);
+            file_content = init_list((void *)my_strdup(line), STRING, NONE);
         } else {
-            append(file_content, (void *)my_strdup(line), STRING);
+            append(file_content, (void *)my_strdup(line), STRING, NONE);
         }
     }
 }
