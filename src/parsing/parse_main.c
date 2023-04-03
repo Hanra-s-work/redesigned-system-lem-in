@@ -17,6 +17,6 @@ parser_t *parse_main(void)
     parser_t *parsed = NULL;
 
     parsed = init_parser();
-    parsed = get_file_content();
+    parsed->file_content = get_file_content();
     return parsed;
 }

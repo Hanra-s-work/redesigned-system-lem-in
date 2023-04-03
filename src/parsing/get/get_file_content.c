@@ -32,4 +32,5 @@ linked_lists_t *get_file_content(void)
             append(file_content, (void *)my_strdup(line), STRING, NONE);
         }
     }
+    return file_content;
 }

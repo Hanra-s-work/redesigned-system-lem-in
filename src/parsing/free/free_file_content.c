@@ -16,7 +16,7 @@ void free_file_content(linked_lists_t *ll)
 
     for (tmp = ll; tmp != NULL; tmp = tmp->next) {
         if (tmp->type == STRING) {
-            li_free(tmp->type);
+            li_free(tmp->data);
         }
         if (tmp->prev != NULL) {
             free(tmp->prev);

@@ -18,7 +18,7 @@ void free_rooms(linked_lists_t *ll)
     rooms_t *tmp_rooms = NULL;
 
     for (tmp = ll; tmp != NULL; tmp = tmp->next) {
-        tmp_rooms = (tunnel_t *)tmp->data;
+        tmp_rooms = (rooms_t *)tmp->data;
         if (tmp_rooms != NULL) {
             li_free(tmp_rooms->name);
             free(tmp_rooms);

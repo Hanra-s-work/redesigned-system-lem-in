@@ -8,14 +8,16 @@
 #include <stddef.h>
 #include "parse.h"
 #include "li_structs.h"
+#include "path_finder.h"
 #include "linked_lists.h"
+#include "li_constants.h"
 
-// les solver se trouverons entre parsed et disp_file_content
 int sub_main(int argc, char **argv)
 {
+    int status = success;
     parser_t *parsed = NULL;
-
     parsed = parse_main();
+    status = path_finding_main(parsed);
     disp_file_content(parsed->file_content);
-    return 0;
+    return status;
 }
