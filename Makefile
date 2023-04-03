@@ -5,8 +5,28 @@
 ## mul
 ##
 
+SRC_PARSING	=	./src/parsing/parse_main.c	\
+				./src/parsing/disp_file_content.c	\
+				./src/parsing/get/get_file_content.c	\
+				./src/parsing/free/li_free.c	\
+				./src/parsing/free/free_rooms.c	\
+				./src/parsing/free/free_parser.c	\
+				./src/parsing/free/free_tunnels.c	\
+				./src/parsing/free/free_file_content.c	\
+				./src/parsing/init/init_rooms.c	\
+				./src/parsing/init/init_parser.c	\
+				./src/parsing/init/init_tunnels.c	\
+
+
+SRC_PATH_FINDER	=	./src/path_finder/path_finder_main.c	\
+
+
 SRC	=	./main.c	\
 		./src/sub_main.c	\
+
+
+SRC	+=	$(SRC_PARSING)
+SRC	+=	$(SRC_PATH_FINDER)
 
 SILENT	=	@
 

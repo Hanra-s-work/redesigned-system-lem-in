@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "linked_lists.h"
 
-linked_lists_t *init_list(void *data, data_type_e type)
+linked_lists_t *init_list(void *data, data_type_e type, struct_name_e sn)
 {
     linked_lists_t *ll = malloc(sizeof(linked_lists_t));
     ll->index = 0;
@@ -16,5 +16,6 @@ linked_lists_t *init_list(void *data, data_type_e type)
     ll->next = NULL;
     ll->type = type;
     ll->data = data;
+    ll->struct_name = sn;
     return ll;
 }

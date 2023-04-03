@@ -7,10 +7,14 @@
 
 #ifndef LI_STRUCTS_H_
     #define LI_STRUCTS_H_
+    #include "linked_lists.h"
 
-typedef struct passer_s {
+typedef struct parser_s {
+    llists_t *file_content;
+    llists_t *tunnels;
+    llists_t *rooms;
     int status;
-} passer_t;
+} parser_t;
 
 
 #endif

@@ -8,9 +8,9 @@
 #include <stdlib.h>
 #include "linked_lists.h"
 
-int append(linked_lists_t *ll, void *data, data_type_e type)
+int append(linked_lists_t *ll, void *data, data_type_e type, struct_name_e sn)
 {
-    linked_lists_t *new = init_list(data, type);
+    linked_lists_t *new = init_list(data, type, sn);
     linked_lists_t *tmp;
 
     for (tmp = ll; tmp->next != NULL; tmp = tmp->next);
