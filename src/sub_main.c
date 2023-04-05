@@ -6,6 +6,11 @@
 */
 
 #include <stddef.h>
+#include <stdbool.h>
+
+#include "my.h"
+#include "src.h"
+#include "disp.h"
 #include "parse.h"
 #include "li_structs.h"
 #include "path_finder.h"
@@ -16,8 +21,20 @@ int sub_main(int argc, char **argv)
 {
     int status = success;
     parser_t *parsed = NULL;
+    batch_colours_t *bc = init_colours();
+
+    if (argc != 1) {
+        if (argc == 2 && is_help(argv[1]) == true) {
+            disp_help(bc, argv[0]);
+            return success;
+        }
+        disp_error(bc, "ERROR: Enter -h for help\n");
+        return err;
+    }
+
     parsed = parse_main();
     status = path_finding_main(parsed);
     disp_file_content(parsed->file_content);
+    free_colours(bc);
     return status;
 }
