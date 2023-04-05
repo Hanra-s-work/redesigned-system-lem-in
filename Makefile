@@ -6,7 +6,6 @@
 ##
 
 SRC_PARSING	=	./src/parsing/parse_main.c	\
-				./src/parsing/disp_file_content.c	\
 				./src/parsing/get/get_file_content.c	\
 				./src/parsing/free/li_free.c	\
 				./src/parsing/free/free_rooms.c	\
@@ -24,6 +23,7 @@ SRC	=	./main.c	\
 		./src/sub_main.c	\
 		./src/disp/disp_help.c	\
 		./src/disp/disp_error.c	\
+		./src/disp/disp_file_content.c	\
 		./src/disp/disp_pretty_output.c	\
 
 SRC	+=	$(SRC_PARSING)

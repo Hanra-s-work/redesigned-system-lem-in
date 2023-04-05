@@ -10,6 +10,5 @@
     #include "li_structs.h"
 
 parser_t *parse_main(void);
-void disp_file_content(linked_lists_t *file_content);
 
 #endif
