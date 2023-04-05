@@ -26,9 +26,11 @@ linked_lists_t *get_file_content(void)
             return file_content;
         }
         line[size_read - 1] = '\0';
-        if (file_content != NULL) {
+        if (file_content == NULL) {
+            my_putstr("file_content = NULL");
             file_content = init_list((void *)my_strdup(line), STRING, NONE);
         } else {
+            my_putstr("file content != NULL\n");
             append(file_content, (void *)my_strdup(line), STRING, NONE);
         }
     }

@@ -53,7 +53,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJ)
 	$(MAK) ./lib
-	$(CC) $(SRC) -o $(NAME) $(LIBFLAGS) $(CFLAGS) $(CPPFLAGS)
+	$(CC) $(OBJ) -o $(NAME) $(LIBFLAGS) $(CFLAGS) $(CPPFLAGS)
 
 clean:
 	$(RM) $(OBJ)
