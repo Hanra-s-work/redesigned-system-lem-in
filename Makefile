@@ -17,13 +17,14 @@ SRC_PARSING	=	./src/parsing/parse_main.c	\
 				./src/parsing/init/init_parser.c	\
 				./src/parsing/init/init_tunnels.c	\
 
-
 SRC_PATH_FINDER	=	./src/path_finder/path_finder_main.c	\
 
-
 SRC	=	./main.c	\
+		./src/is_help.c	\
 		./src/sub_main.c	\
-
+		./src/disp/disp_help.c	\
+		./src/disp/disp_error.c	\
+		./src/disp/disp_pretty_output.c	\
 
 SRC	+=	$(SRC_PARSING)
 SRC	+=	$(SRC_PATH_FINDER)
@@ -45,7 +46,8 @@ OBJ	=	$(SRC:.c=.o)
 NAME	=	lem_in
 
 LIBFLAGS	=	-Llib/my/ -lmy	\
-				-Llib/linked_lists -llinklist
+				-Llib/linked_lists -llinklist	\
+				-Llib/batch_colouriser -lbcolour	\
 
 all:	$(NAME)
 
@@ -62,10 +64,10 @@ fclean: clean
 	$(RM) $(NAME)_debug
 	$(MAK) ./lib fclean
 
-re: fclean all
-
 debug: CFLAGS	+=	-g3
 debug: NAME	:=	$(NAME)_debug
 debug: clean all
+
+re: fclean all
 
 .PHONY: re fclean clean all debug
