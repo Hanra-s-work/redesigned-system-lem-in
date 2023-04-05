@@ -24,9 +24,13 @@ static bool is_in(char const *str, char sep)
     return false;
 }
 
-static void who_to_display(bcol_t *bc, char const *str)
+static void who_to_display(bcol_t *bc, char *str)
 {
     bool done = false;
+    if (str != NULL && is_in(str, 'P') == true && false == done) {
+        set_colour(bc, MOVES_COL, str);
+        done = true;
+    }
     if (str != NULL && is_in(str, '-') == true && false == done) {
         set_colour(bc, TUNNEL_COL, str);
         done = true;
@@ -37,10 +41,6 @@ static void who_to_display(bcol_t *bc, char const *str)
     }
     if (str != NULL && str[0] == '#' && false == done) {
         set_colour(bc, SUCCESS_COL, str);
-        done = true;
-    }
-    if (str != NULL && is_in(str, 'P') == true && false == done) {
-        set_colour(bc, MOVES_COL, str);
         done = true;
     }
     if (str != NULL && false == done)

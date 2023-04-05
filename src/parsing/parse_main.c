@@ -18,5 +18,6 @@ parser_t *parse_main(void)
 
     parsed = init_parser();
     parsed->file_content = get_file_content();
+    sort_data(parsed);
     return parsed;
 }
