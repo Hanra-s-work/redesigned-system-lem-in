@@ -6,7 +6,7 @@
 */
 
 #ifndef LINKED_LISTS_H_
-#define LINKED_LISTS_H_
+    #define LINKED_LISTS_H_
 
 typedef enum data_type_e {
     INT,

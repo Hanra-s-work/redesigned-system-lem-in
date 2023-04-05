@@ -7,6 +7,9 @@
 
 #ifndef SRC_H_
     #define SRC_H_
+    #include <stdbool.h>
 
 int sub_main(int argc, char **argv);
+
+bool is_help(char *arg);
 #endif

@@ -6,8 +6,8 @@
 */
 
 #ifndef LI_STRUCTS_PARSER_H_
-#define LI_STRUCTS_PARSER_H_
-#include <stdbool.h>
+    #define LI_STRUCTS_PARSER_H_
+    #include <stdbool.h>
 
 typedef struct rooms_s {
     char *name;
