@@ -6,9 +6,9 @@
 */
 
 #ifndef INIT_H_
-#define INIT_H_
-#include "li_structs.h"
-#include "li_structs_parser.h"
+    #define INIT_H_
+    #include "li_structs.h"
+    #include "li_structs_parser.h"
 
 parser_t *init_parser(void);
 tunnel_t *init_tunnels(int start, int end, int weight);

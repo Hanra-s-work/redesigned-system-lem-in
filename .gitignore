@@ -27,3 +27,4 @@ vgcore.*
 bin/*
 lem_in
 helm_in
+lem_in_debug

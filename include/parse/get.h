@@ -6,8 +6,8 @@
 */
 
 #ifndef GET_H_
-#define GET_H_
-#include "linked_lists.h"
+    #define GET_H_
+    #include "linked_lists.h"
 
 linked_lists_t *get_file_content(void);
 

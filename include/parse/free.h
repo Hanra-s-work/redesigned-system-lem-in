@@ -6,10 +6,10 @@
 */
 
 #ifndef FREE_H_
-#define FREE_H_
-#include "li_structs.h"
-#include "linked_lists.h"
-#include "li_structs_parser.h"
+    #define FREE_H_
+    #include "li_structs.h"
+    #include "linked_lists.h"
+    #include "li_structs_parser.h"
 
 void li_free(void *data);
 void free_parser(parser_t *parsed);
