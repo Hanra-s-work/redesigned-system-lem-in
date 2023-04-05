@@ -16,6 +16,7 @@ int my_put_nbr(int nb);
 int my_strlen(char const *str);
 int my_putstr(char const *str);
 int my_getnbr(char const *str);
+int my_str_isnum(char const *str);
 int my_strcmp(char const *s1, char const *s2);
 int my_strncmp(char const *s1, char const *s2, int n);
 

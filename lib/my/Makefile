@@ -5,19 +5,20 @@
 ## lib
 ##
 
-SRC	=	my_putstr.c	\
-		my_strlen.c	\
-		my_getnbr.c	\
-		my_strcmp.c	\
-		my_strdup.c	\
-		my_strcpy.c	\
-		my_strcat.c	\
-		my_putchar.c	\
-		my_put_nbr.c	\
-		my_strncmp.c	\
-		my_strncpy.c	\
-		my_show_word_array.c	\
-		my_str_to_word_array.c	\
+SRC	=	./my_putstr.c	\
+		./my_strlen.c	\
+		./my_getnbr.c	\
+		./my_strcmp.c	\
+		./my_strdup.c	\
+		./my_strcpy.c	\
+		./my_strcat.c	\
+		./my_putchar.c	\
+		./my_put_nbr.c	\
+		./my_strncmp.c	\
+		./my_strncpy.c	\
+		./my_str_isnum.c 	\
+		./my_show_word_array.c	\
+		./my_str_to_word_array.c	\
 
 SILENT	=	@
 
