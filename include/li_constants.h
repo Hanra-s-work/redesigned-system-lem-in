@@ -11,4 +11,6 @@
 static const int err = 84;
 static const int error = 84;
 static const int success = 0;
+static const int ant_error = (-1);
+
 #endif

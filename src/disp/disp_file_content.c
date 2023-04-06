@@ -15,6 +15,7 @@ void disp_file_content(linked_lists_t *file_content)
     for (tmp = file_content; tmp != NULL; tmp = tmp->next) {
         if (tmp->type == STRING) {
             my_putstr((char *)tmp->data);
+            my_putchar('\n');
         }
     }
 }

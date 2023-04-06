@@ -6,6 +6,7 @@
 */
 
 #include <stdlib.h>
+#include "parse/free.h"
 #include "li_structs.h"
 #include "linked_lists.h"
 #include "li_structs_parser.h"
@@ -23,5 +24,10 @@ void free_tunnels(linked_lists_t *ll)
         if (tmp->prev != NULL) {
             free(tmp->prev);
         }
+        if (tmp->next == NULL) {
+            ll = tmp;
+        }
     }
+    li_free(tmp);
+    li_free(ll);
 }

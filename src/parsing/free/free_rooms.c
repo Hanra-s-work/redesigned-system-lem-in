@@ -26,5 +26,10 @@ void free_rooms(linked_lists_t *ll)
         if (tmp->prev != NULL) {
             free(tmp->prev);
         }
+        if (tmp->next == NULL) {
+            ll = tmp;
+        }
     }
+    li_free(tmp);
+    li_free(ll);
 }
