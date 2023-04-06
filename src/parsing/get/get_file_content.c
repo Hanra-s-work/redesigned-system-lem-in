@@ -9,6 +9,7 @@
 #include <stdlib.h>
 
 #include "my.h"
+#include "parse/free.h"
 #include "linked_lists.h"
 
 linked_lists_t *get_file_content(void)
@@ -21,7 +22,7 @@ linked_lists_t *get_file_content(void)
     while (size_read != (-1)) {
         size_read = getline(&line, &size, stdin);
         if (size_read == (-1)) {
-            (line != NULL) ? free(line) : (size_read = 0);
+            (line != NULL) ? li_free(line) : (size_read = 0);
             return file_content;
         }
         line[size_read - 1] = '\0';
@@ -31,5 +32,6 @@ linked_lists_t *get_file_content(void)
             append(file_content, (void *)my_strdup(line), STRING, NONE);
         }
     }
+    li_free(line);
     return file_content;
 }

@@ -12,6 +12,7 @@
 #include "src.h"
 #include "disp.h"
 #include "parse.h"
+#include "parse/free.h"
 #include "li_structs.h"
 #include "path_finder.h"
 #include "linked_lists.h"
@@ -36,5 +37,6 @@ int sub_main(int argc, char **argv)
     status = path_finding_main(parsed);
     disp_pretty_output(bc, parsed->file_content);
     free_colours(bc);
+    free_parser(parsed);
     return status;
 }

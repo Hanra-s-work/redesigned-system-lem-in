@@ -15,6 +15,12 @@ static void free_nodes(linked_lists_t *ll)
         if (tmp->prev != NULL) {
             free(tmp->prev);
         }
+        if (tmp->next == NULL) {
+            ll = tmp;
+        }
+    }
+    if (ll != NULL) {
+        free(ll);
     }
     if (tmp != NULL) {
         free(tmp);
