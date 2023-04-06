@@ -29,6 +29,9 @@ SRC	=	./main.c	\
 		./src/sub_main.c	\
 		./src/disp/disp_help.c	\
 		./src/disp/disp_error.c	\
+		./src/disp/disp_rooms.c	\
+		./src/disp/disp_parser.c	\
+		./src/disp/disp_tunnels.c	\
 		./src/disp/disp_file_content.c	\
 		./src/disp/disp_pretty_output.c	\
 

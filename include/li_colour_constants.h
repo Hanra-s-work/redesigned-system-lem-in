@@ -16,4 +16,5 @@
     #define TUNNEL_COL "0E"
     #define MOVES_COL "0D"
     #define LINE_COL "0C"
+    #define INFO_COL "0B"
 #endif
