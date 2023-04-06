@@ -16,4 +16,6 @@ void free_parser(parser_t *parsed);
 void free_rooms(linked_lists_t *ll);
 void free_tunnels(linked_lists_t *ll);
 void free_file_content(linked_lists_t *ll);
+void free_array(char **array);
+
 #endif

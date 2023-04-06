@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include "li_structs.h"
+#include "li_constants.h"
 
 parser_t *init_parser(void)
 {
@@ -15,5 +16,6 @@ parser_t *init_parser(void)
     parser->rooms = NULL;
     parser->tunnels = NULL;
     parser->file_content = NULL;
+    parser->status = success;
     return parser;
 }

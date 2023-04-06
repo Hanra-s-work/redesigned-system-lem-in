@@ -20,10 +20,15 @@ int get_ants(linked_lists_t *file_content)
     if (tmp->type == STRING) {
         data = my_strdup((char const *)tmp->data);
     }
-    if (my_str_isnum(data) == 84)
+    if (my_str_isnum(data) == 84) {
+        free(data);
         return ant_error;
+    }
     ants_nb = my_getnbr(data);
-    if (ants_nb <= 0)
+    if (ants_nb <= 0) {
+        free(data);
         return ant_error;
+    }
+    free(data);
     return ants_nb;
 }

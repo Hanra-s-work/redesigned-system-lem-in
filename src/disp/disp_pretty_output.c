@@ -50,7 +50,6 @@ static void who_to_display(bcol_t *bc, char *str)
 void disp_pretty_output(bcolours_t *bc, linked_lists_t *file_content)
 {
     char *str = NULL;
-    bool done = false;
     linked_lists_t *tmp = NULL;
 
     for (tmp = file_content; tmp != NULL; tmp = tmp->next) {
