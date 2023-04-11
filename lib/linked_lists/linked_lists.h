@@ -18,6 +18,7 @@ typedef enum data_type_e {
     UNKNOWN,
     INT_ARRAY,
     FLOAT_ARRAY,
+    LINKED_LISTS,
     END_OF_LINKED_LIST
 } data_type_e;
 
