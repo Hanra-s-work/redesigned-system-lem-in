@@ -9,11 +9,14 @@
     #define PARSE_H_
     #include <stdbool.h>
     #include "li_structs.h"
+    #include "li_structs_parser.h"
 
 parser_t *parse_main(void);
 
+tmp_room_track_t init_tmp_room_track(int nb);
+int count_char(char *str, char sep);
 bool is_in(char const *str, char sep);
 
-void sort_data(parser_t *parser);
+int sort_data(parser_t *parser);
 
 #endif

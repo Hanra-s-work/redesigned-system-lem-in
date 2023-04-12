@@ -21,6 +21,7 @@ SRC_PARSING	=	./src/parsing/is_in.c	\
 				./src/parsing/init/init_rooms.c	\
 				./src/parsing/init/init_parser.c	\
 				./src/parsing/init/init_tunnels.c	\
+				./src/parsing/init/init_tmp_room_track.c	\
 
 SRC_PATH_FINDER	=	./src/path_finder/path_finder_main.c	\
 
