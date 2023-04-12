@@ -35,7 +35,7 @@ int sub_main(int argc, char **argv)
 
     parsed = parse_main();
     status = path_finding_main(parsed);
-    disp_pretty_output(bc, parsed->file_content);
+    disp_file_content(parsed->file_content);
     free_colours(bc);
     free_parser(parsed);
     return status;
