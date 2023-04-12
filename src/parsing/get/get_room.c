@@ -26,7 +26,7 @@ static char *manage_name(llists_t **fc, int *w, char *name)
     return name;
 }
 
-static void init_or_append(parser_t *parser, rooms_t *room) 
+static void init_or_append(parser_t *parser, rooms_t *room)
 {
     if (parser->rooms != NULL) {
         append(parser->rooms, (void *)room, STRUCT, ROOMS);
@@ -39,7 +39,7 @@ void get_room(parser_t *parser, char const *data, llists_t **fc, int nb_ants)
 {
     int whois = 0;char *name = NULL;char tmp[2];rooms_t *room = NULL;
 
-    if (whois == 0 &&  my_strcmp(data, "##start") == 0) {
+    if (whois == 0 && my_strcmp(data, "##start") == 0) {
         name = my_strdup((char const *)(*fc)->data);
         (*fc) = (*fc)->next;
         room = init_rooms(name, true, false, nb_ants);

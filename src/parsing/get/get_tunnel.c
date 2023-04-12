@@ -12,7 +12,7 @@
 #include "linked_lists.h"
 #include "li_structs_parser.h"
 
-static void init_or_append(parser_t *parser, tunnel_t *tunnel) 
+static void init_or_append(parser_t *parser, tunnel_t *tunnel)
 {
     if (parser->tunnels != NULL) {
         append(parser->tunnels, (void *)tunnel, STRUCT, TUNNELS);

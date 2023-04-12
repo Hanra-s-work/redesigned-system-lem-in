@@ -16,7 +16,7 @@ void disp_tunnels(bcolours_t *bc, llists_t *tunnel)
 {
     llists_t *tmp = NULL;
     tunnel_t *tmp_tunnel = NULL;
-    
+
     for (tmp = tunnel; tmp != NULL; tmp = tmp->next) {
         tmp_tunnel = (tunnel_t *)tmp->data;
         set_colour(bc, INFO_COL, "start  = ");

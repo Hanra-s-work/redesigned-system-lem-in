@@ -14,8 +14,7 @@
 
 void disp_room(bcolours_t *bc, llists_t *room)
 {
-    llists_t *tmp = NULL;
-    rooms_t *tmp_room = NULL;
+    llists_t *tmp = NULL;rooms_t *tmp_room = NULL;
 
     for (tmp = room; tmp != NULL; tmp = tmp->next) {
         tmp_room = (rooms_t *)tmp->data;

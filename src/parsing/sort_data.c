@@ -15,6 +15,14 @@
 #include "li_constants.h"
 #include "linked_lists.h"
 
+static void wtst_ovf(parser_t *parser, char *d, bool done)
+{
+    if (d != NULL && false == done) {
+        parser->status = err;
+        done = true;
+    }
+}
+
 static void who_to_send_to(parser_t *parser, char *d, llists_t **fc, int ants)
 {
     bool done = false;
@@ -34,10 +42,7 @@ static void who_to_send_to(parser_t *parser, char *d, llists_t **fc, int ants)
         get_room(parser, d, fc, ants);
         done = true;
     }
-    if (d != NULL && false == done) {
-        parser->status = err;
-        done = true;
-    }
+    wtst_ovf(parser, d, done);
 }
 
 void sort_data(parser_t *p)
