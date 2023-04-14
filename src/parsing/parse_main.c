@@ -21,7 +21,7 @@ parser_t *parse_main(void)
     parsed = init_parser();
     parsed->file_content = get_file_content();
     status = sort_data(parsed);
-    if (status = ant_error)
+    if (ant_error == status)
         return NULL;
     return parsed;
 }

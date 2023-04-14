@@ -5,19 +5,26 @@
 ## mul
 ##
 
-SRC_PARSING	=	./src/parsing/is_in.c	\
-				./src/parsing/sort_data.c	\
+SRC_PARSING	=	./src/parsing/sort_data.c	\
 				./src/parsing/parse_main.c	\
+				./src/parsing/count_char.c	\
+\
+				./src/parsing/is/is_in.c	\
+				./src/parsing/is/is_corr_nb_args.c	\
+\
 				./src/parsing/get/get_ants.c 	\
 				./src/parsing/get/get_room.c 	\
 				./src/parsing/get/get_tunnel.c 	\
+				./src/parsing/get/get_char_index.c	\
 				./src/parsing/get/get_file_content.c	\
+\
 				./src/parsing/free/li_free.c	\
 				./src/parsing/free/free_rooms.c	\
 				./src/parsing/free/free_array.c	\
 				./src/parsing/free/free_parser.c	\
 				./src/parsing/free/free_tunnels.c	\
 				./src/parsing/free/free_file_content.c	\
+\
 				./src/parsing/init/init_rooms.c	\
 				./src/parsing/init/init_parser.c	\
 				./src/parsing/init/init_tunnels.c	\
@@ -72,6 +79,7 @@ all:	$(NAME)
 
 $(NAME):	update_libs $(OBJ) $(MAIN_OBJ)
 	$(CC) $(OBJ) $(MAIN_OBJ) -o $(NAME) $(LIBFLAGS) $(LIBS) $(CPPFLAGS)
+	exit 1
 
 update_libs:
 	$(MAK) ./lib

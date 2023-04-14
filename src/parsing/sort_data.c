@@ -10,6 +10,7 @@
 
 #include "disp.h"
 #include "parse.h"
+#include "parse/is.h"
 #include "parse/get.h"
 #include "li_structs.h"
 #include "li_constants.h"
@@ -51,7 +52,7 @@ int sort_data(parser_t *p)
     linked_lists_t *fcontent = p->file_content;
     int nb_ants = get_ants(fcontent);
 
-    if (nb_ants = ant_error)
+    if (nb_ants == ant_error)
         return ant_error;
     fcontent = fcontent->next;
     for (; fcontent != NULL && p->status != err; fcontent = fcontent->next) {
@@ -62,5 +63,5 @@ int sort_data(parser_t *p)
         }
         who_to_send_to(p, data, &fcontent, nb_ants);
     }
-
+    return success;
 }

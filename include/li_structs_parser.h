@@ -6,9 +6,9 @@
 */
 
 #ifndef LI_STRUCTS_PARSER_H_
-    #define LI_STRUCTS_PARSER_H_
-    #include <stdbool.h>
-    #include "linked_lists.h"
+#define LI_STRUCTS_PARSER_H_
+#include <stdbool.h>
+#include "linked_lists.h"
 
 typedef struct rooms_s {
     char *name;
@@ -37,9 +37,13 @@ typedef struct tmp_room_track_s {
     int posy;
     int whois;
     int nb_end;
+    int nb_ants;
     int nb_start;
     rooms_t *room;
 } tmp_room_track_t;
 
+typedef struct tmp_room_track_s trtrack_t;
+typedef struct tmp_room_track_s troom_track_t;
+typedef struct tmp_room_track_s tmp_room_track_t;
 
 #endif

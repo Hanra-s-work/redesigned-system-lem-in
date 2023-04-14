@@ -9,6 +9,7 @@
     #define IS_H_
     #include <stdbool.h>
 
-bool is_corr_nb_args(int nb_args);
+bool is_in(char const *str, char sep);
+bool is_corr_nb_args(char const *room);
 
 #endif
