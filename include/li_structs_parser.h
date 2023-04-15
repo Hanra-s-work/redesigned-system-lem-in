@@ -6,9 +6,9 @@
 */
 
 #ifndef LI_STRUCTS_PARSER_H_
-#define LI_STRUCTS_PARSER_H_
-#include <stdbool.h>
-#include "linked_lists.h"
+    #define LI_STRUCTS_PARSER_H_
+    #include <stdbool.h>
+    #include "linked_lists.h"
 
 typedef struct rooms_s {
     char *name;
