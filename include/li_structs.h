@@ -16,5 +16,4 @@ typedef struct parser_s {
     int status;
 } parser_t;
 
-
 #endif
