@@ -36,6 +36,8 @@ SRC_PARSING	=	./src/parsing/sort_data.c	\
 				./src/parsing/init/init_parser.c	\
 				./src/parsing/init/init_tunnels.c	\
 				./src/parsing/init/init_tmp_room_track.c	\
+				./src/parsing/init/init_or_append_room.c	\
+				./src/parsing/init/init_or_append_tunnel.c	\
 
 SRC_PATH_FINDER	=	./src/path_finder/path_finder_main.c	\
 
@@ -54,7 +56,7 @@ MAIN_SRC	=	./main.c
 SRC	+=	$(SRC_PARSING)
 SRC	+=	$(SRC_PATH_FINDER)
 
-SILENT	=	@
+SILENT	=	
 
 CC	=	$(SILENT)gcc
 
@@ -75,7 +77,7 @@ NAME	=	lem_in
 TEST_FILES	=	./tests/test_lem_in.c
 
 LIBFLAGS	=	-Llib/my/	\
-				-Llib/linked_lists	\
+				-Lbonus/side_data/dev/parsing/move_node/lib/linked_lists	\
 				-Llib/batch_colouriser	\
 
 LIBS	=	-lmy	\

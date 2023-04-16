@@ -51,7 +51,7 @@ linked_lists_t *get_last_node(linked_lists_t *ll);
 linked_lists_t *free_node(linked_lists_t *ll, int index);
 linked_lists_t *get_node(linked_lists_t *ll, int node_index);
 linked_lists_t *init_list(void *data, data_type_e dt, struct_name_e sn);
-linked_lists_t *move(llists_t *head, uint from_index, uint to_index, int *stat);
+linked_lists_t *move(llists_t *ll, uint from_index, uint to_index, int *status);
 
 data_type_e get_node_type(linked_lists_t *ll, int data_index);
 

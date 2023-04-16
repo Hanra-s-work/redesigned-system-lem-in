@@ -8,6 +8,10 @@
 #ifndef LINKED_LISTS_H_
     #define LINKED_LISTS_H_
 
+static const int ll_err = 84;
+static const int ll_nothing = 42;
+static const int ll_success = 0;
+
 typedef enum data_type_e {
     INT,
     VOID,
@@ -41,12 +45,17 @@ struct linked_lists_s {
 typedef struct linked_lists_s linked_lists_t;
 typedef struct linked_lists_s llists_t;
 
+typedef unsigned int uint;
+
 linked_lists_t *get_last_node(linked_lists_t *ll);
-linked_lists_t *init_list(void *data, data_type_e dt, struct_name_e sn);
 linked_lists_t *free_node(linked_lists_t *ll, int index);
 linked_lists_t *get_node(linked_lists_t *ll, int node_index);
+linked_lists_t *init_list(void *data, data_type_e dt, struct_name_e sn);
+linked_lists_t *move(llists_t *head, uint from_index, uint to_index, int *stat);
+
 data_type_e get_node_type(linked_lists_t *ll, int data_index);
 
+void update_indexes(linked_lists_t *ll);
 void free_linked_list(linked_lists_t *ll);
 void *get_node_data(linked_lists_t *ll, int data_index);
 

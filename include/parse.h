@@ -13,9 +13,11 @@
 
 parser_t *parse_main(void);
 
+void add_section(parser_t *parse);
+
 tmp_room_track_t init_tmp_room_track(int nb);
-int count_char(char *str, char sep);
 
 int sort_data(parser_t *parser);
+int count_char(char *str, char sep);
 
 #endif

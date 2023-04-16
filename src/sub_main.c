@@ -32,7 +32,6 @@ int sub_main(int argc, char **argv)
         disp_error(bc, "ERROR: Enter -h for help\n");
         return err;
     }
-
     parsed = parse_main();
     if (parsed == NULL)
         return error;

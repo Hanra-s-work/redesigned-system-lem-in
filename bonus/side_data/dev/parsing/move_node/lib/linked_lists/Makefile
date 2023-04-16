@@ -18,13 +18,13 @@ SRC	=	init.c	\
 		free_linked_list.c	\
 		get_last_node_index.c	\
 
-SILENT	=	@
+SILENT	=	
 
 CC	=	$(SILENT)gcc
 
 RM	=	$(SILENT)rm -f
 
-COPY	=	$(SILENT)#cp -f
+COPY	=	$(SILENT)cp -f
 
 CPPFLAGS	=	-I./include
 
@@ -41,6 +41,7 @@ DYNAMIC	=	$(patsubst %.a,%.so,$(NAME))
 all: update_includes $(NAME) update_archive
 
 $(NAME):	$(OBJ)
+	echo "In linked_lists"
 	$(SILENT)ar rc $(NAME) $(OBJ)
 
 update_archive:
@@ -50,6 +51,7 @@ update_dynamic_archive:
 	$(COPY) $(DYNAMIC) ../
 
 update_includes:
+	echo "$(pwd)"
 	$(COPY) $(HEADERFILE) ../../include
 
 shared:	$(DYNAMIC) update_includes update_dynamic_archive
