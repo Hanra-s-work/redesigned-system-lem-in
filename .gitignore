@@ -8,6 +8,10 @@
 
 *.o
 
+# Fichier de test
+*.gcda
+*.gcno
+
 # les archives
 *.a
 
@@ -28,3 +32,4 @@ bin/*
 lem_in
 helm_in
 lem_in_debug
+lem_in_tests

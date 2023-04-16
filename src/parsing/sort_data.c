@@ -10,6 +10,7 @@
 
 #include "disp.h"
 #include "parse.h"
+#include "parse/is.h"
 #include "parse/get.h"
 #include "li_structs.h"
 #include "li_constants.h"
@@ -45,12 +46,14 @@ static void who_to_send_to(parser_t *parser, char *d, llists_t **fc, int ants)
     wtst_ovf(parser, d, done);
 }
 
-void sort_data(parser_t *p)
+int sort_data(parser_t *p)
 {
     char *data = NULL;
     linked_lists_t *fcontent = p->file_content;
     int nb_ants = get_ants(fcontent);
 
+    if (nb_ants == ant_error)
+        return ant_error;
     fcontent = fcontent->next;
     for (; fcontent != NULL && p->status != err; fcontent = fcontent->next) {
         if (fcontent->type == STRING) {
@@ -60,5 +63,5 @@ void sort_data(parser_t *p)
         }
         who_to_send_to(p, data, &fcontent, nb_ants);
     }
-
+    return success;
 }

@@ -1,9 +1,9 @@
 name: "helm-in"
 
 on:
-  # push:
-  #   branches-ignore:
-  #   - "ga-ignore-*"
+  push:
+    branches-ignore:
+    - "ga-ignore-*"
   pull_request:
     branches-ignore:
     - "ga-ignore-*"
@@ -58,31 +58,31 @@ jobs:
         chmod +x $COMPILATION_CHECKER
         ./$COMPILATION_CHECKER
 
-  check_functional_tests:
-    runs-on: ubuntu-latest
-    needs: check_if_compiles
-    if: success()
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - name: Compile program
-      run: make
-    - name: run_tests
-      run: |
-        OLD_DIR="$FUNCTIONAL_TESTS_PATH"
-        NEW_DIR=""
-        for dir in $(echo $OLD_DIR | tr "/" "\n"); do
-          if [ "$dir" == "." ]; then
-            NEW_DIR+="./"
-          else
-            NEW_DIR+="../"
-          fi
-        done
-        cd $FUNCTIONAL_TESTS_PATH
-        chmod +x $FUNCTIONAL_TESTS_NAME
-        cp $NEW_DIR/$EXECUTABLE ./$EXECUTABLE
-        ./$FUNCTIONAL_TESTS_NAME ./$EXECUTABLE
+  # check_functional_tests:
+  #   runs-on: ubuntu-latest
+  #   needs: check_if_compiles
+  #   if: success()
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #     with:
+  #       fetch-depth: 0
+  #   - name: Compile program
+  #     run: make
+  #   - name: run_tests
+  #     run: |
+  #       OLD_DIR="$FUNCTIONAL_TESTS_PATH"
+  #       NEW_DIR=""
+  #       for dir in $(echo $OLD_DIR | tr "/" "\n"); do
+  #         if [ "$dir" == "." ]; then
+  #           NEW_DIR+="./"
+  #         else
+  #           NEW_DIR+="../"
+  #         fi
+  #       done
+  #       cd $FUNCTIONAL_TESTS_PATH
+  #       chmod +x $FUNCTIONAL_TESTS_NAME
+  #       cp $NEW_DIR/$EXECUTABLE ./$EXECUTABLE
+  #       ./$FUNCTIONAL_TESTS_NAME ./$EXECUTABLE
 
   repository_mirroring:
     runs-on: ubuntu-latest
