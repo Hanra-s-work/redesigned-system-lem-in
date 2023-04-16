@@ -59,7 +59,7 @@ static void process_start(trtrack_t *track, char const *data, llists_t **fc)
     }
 }
 
-static void process_end(trtrack_t *track, char const *data, llists_t **fc)
+static void process_end(trtrack_t *track, char const *data)
 {
     if (track->whois == 2 && my_strcmp(data, "##end") == 0) {
         track->nb_end += 1;
@@ -74,9 +74,10 @@ void get_room(parser_t *parser, char const *data, llists_t **fc, int nb_ants)
     char tmp[2];
     rooms_t *room = NULL;
 
+    track.nb_ants = nb_ants;
     process_start(&track, data, fc);
     name = manage_name(fc, &track.whois, name);
-    process_end(&track, data, fc);
+    process_end(&track, data);
     if (track.whois == 0) {
         tmp[0] = ((char const *)(*fc)->data)[0];
         tmp[1] = '\0';
