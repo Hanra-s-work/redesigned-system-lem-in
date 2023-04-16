@@ -7,6 +7,7 @@
 
 #ifndef LI_STRUCTS_H_
     #define LI_STRUCTS_H_
+    #include <stdbool.h>
     #include "linked_lists.h"
 
 typedef struct parser_s {
@@ -15,5 +16,12 @@ typedef struct parser_s {
     llists_t *rooms;
     int status;
 } parser_t;
+
+typedef struct who_was_displayed_s {
+    bool number_of_ants;
+    bool rooms;
+    bool tunnels;
+    bool moves;
+} who_was_displayed_t;
 
 #endif
