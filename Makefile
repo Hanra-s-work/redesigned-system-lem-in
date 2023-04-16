@@ -79,7 +79,6 @@ all:	$(NAME)
 
 $(NAME):	update_libs $(OBJ) $(MAIN_OBJ)
 	$(CC) $(OBJ) $(MAIN_OBJ) -o $(NAME) $(LIBFLAGS) $(LIBS) $(CPPFLAGS)
-	exit 1
 
 update_libs:
 	$(MAK) ./lib

@@ -30,7 +30,7 @@ typedef struct tunnel_s {
     int weight;
 } tunnel_t;
 
-typedef struct tmp_room_track_s {
+struct tmp_room_track_s {
     char *name;
     char *prev_name;
     int posx;
@@ -40,7 +40,7 @@ typedef struct tmp_room_track_s {
     int nb_ants;
     int nb_start;
     rooms_t *room;
-} tmp_room_track_t;
+};
 
 typedef struct tmp_room_track_s trtrack_t;
 typedef struct tmp_room_track_s troom_track_t;
