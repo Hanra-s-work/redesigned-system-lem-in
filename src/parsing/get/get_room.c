@@ -17,7 +17,6 @@
 #include "li_structs.h"
 #include "li_structs_parser.h"
 
-
 static char *manage_name(llists_t **fc, int *w, char *name)
 {
     if (*w == 0 && ((char *)(*fc)->data)[0] == '#') {
@@ -26,15 +25,6 @@ static char *manage_name(llists_t **fc, int *w, char *name)
         (*fc) = (*fc)->next;
     }
     return name;
-}
-
-static void init_or_append(parser_t *parser, rooms_t *room)
-{
-    if (parser->rooms != NULL) {
-        append(parser->rooms, (void *)room, STRUCT, ROOMS);
-    } else {
-        parser->rooms = init_list((void *)room, STRUCT, ROOMS);
-    }
 }
 
 static bool check_if_correct(char const *data)
@@ -84,6 +74,6 @@ void get_room(parser_t *parser, char const *data, llists_t **fc, int nb_ants)
         track.name = my_strdup(tmp);
         track.room = init_rooms(name, false, false, 1);
     }
-    init_or_append(parser, room);
+    init_or_append_room(parser, room);
     li_free(track.name);
 }

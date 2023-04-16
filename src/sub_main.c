@@ -32,11 +32,10 @@ int sub_main(int argc, char **argv)
         disp_error(bc, "ERROR: Enter -h for help\n");
         return err;
     }
-
     parsed = parse_main();
     if (parsed == NULL)
         return error;
-    status = path_finding_main(parsed);
+    status = path_finding_main(bc, parsed);
     disp_file_content(parsed->file_content);
     free_colours(bc);
     free_parser(parsed);

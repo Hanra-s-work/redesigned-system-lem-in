@@ -7,15 +7,17 @@
 
 #include <stddef.h>
 
+#include "my.h"
 #include "disp.h"
+#include "li_structs.h"
 #include "li_constants.h"
 #include "batch_colouriser.h"
 
-int path_finding_main(int argc, char **argv)
+int path_finding_main(batch_colours_t *bc, parser_t *parsed)
 {
-    if (argc != 1) {
-        disp_error(NULL, argv[0]);
-        return err;
+    int status = success;
+    if (parsed == NULL) {
+        status = disp_error(bc, "parsed is uninitialised\n");
     }
-    return success;
+    return status;
 }

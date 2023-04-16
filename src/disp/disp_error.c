@@ -14,7 +14,11 @@
 
 int disp_error(bcol_t *bc, char const *msg)
 {
-    set_err_out_colour(bc, ERR_COL, (char *)msg);
-    set_err_out_colour(bc, RESET_COL, "");
+    if (bc != NULL) {
+        set_err_out_colour(bc, ERR_COL, (char *)msg);
+        set_err_out_colour(bc, RESET_COL, "");
+    } else {
+        bc_puterror(msg);
+    }
     return err;
 }

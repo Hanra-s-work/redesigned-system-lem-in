@@ -5,13 +5,6 @@
 ## mul
 ##
 
-##
-## EPITECH PROJECT, 2023
-## Makefile
-## File description:
-## mul
-##
-
 SRC_PARSING	=	./src/parsing/sort_data.c	\
 				./src/parsing/parse_main.c	\
 				./src/parsing/count_char.c	\
@@ -36,6 +29,9 @@ SRC_PARSING	=	./src/parsing/sort_data.c	\
 				./src/parsing/init/init_parser.c	\
 				./src/parsing/init/init_tunnels.c	\
 				./src/parsing/init/init_tmp_room_track.c	\
+				./src/parsing/init/init_or_append_room.c	\
+				./src/parsing/init/init_or_append_tunnel.c	\
+				./src/parsing/init/init_who_was_displayed.c	\
 
 SRC_PATH_FINDER	=	./src/path_finder/path_finder_main.c	\
 

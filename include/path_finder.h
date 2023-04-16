@@ -8,7 +8,8 @@
 #ifndef PATH_FINDER_H_
     #define PATH_FINDER_H_
     #include "li_structs.h"
+    #include "batch_colouriser.h"
 
-int path_finding_main(parser_t *parsed);
+int path_finding_main(batch_colours_t *bc, parser_t *parsed);
 
 #endif
