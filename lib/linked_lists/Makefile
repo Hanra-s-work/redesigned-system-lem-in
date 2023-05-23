@@ -16,13 +16,11 @@ SRC	=	init.c	\
 		free_linked_list.c	\
 		get_last_node_index.c	\
 
-SILENT	=	@
+CC	=	gcc
 
-CC	=	$(SILENT)gcc
+RM	=	rm -f
 
-RM	=	$(SILENT)rm -f
-
-COPY	=	$(SILENT)cp -f
+COPY	=	cp -f
 
 CPPFLAGS	=	-I./include
 
@@ -39,7 +37,7 @@ DYNAMIC	=	$(patsubst %.a,%.so,$(NAME))
 all: update_includes $(NAME) update_archive
 
 $(NAME):	$(OBJ)
-	$(SILENT)ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 update_archive:
 	$(COPY) $(NAME) ../

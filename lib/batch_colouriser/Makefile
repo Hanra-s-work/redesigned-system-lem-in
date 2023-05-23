@@ -20,13 +20,12 @@ SRC	=	./set_colour.c	\
 		./dependencies/bc_puterror.c	\
 		./dependencies/bc_strlowcase.c	\
 
-SILENT	=	@
 
-CC	=	$(SILENT)gcc
+CC	=	gcc
 
-RM	=	$(SILENT)rm -f
+RM	=	rm -f
 
-COPY	=	$(SILENT)cp -f
+COPY	=	cp -f
 
 CPPFLAGS	=	-I../../include
 
@@ -43,7 +42,7 @@ DYNAMIC	=	$(patsubst %.a,%.so,$(NAME))
 all: update_includes $(NAME) update_archive
 
 $(NAME):	$(OBJ)
-	$(SILENT)ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 update_archive:
 	$(COPY) $(NAME) ../

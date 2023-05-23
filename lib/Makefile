@@ -5,9 +5,7 @@
 ## Makefile
 ##
 
-SILENT	=	@
-
-MAK	=	$(SILENT)make -C
+MAK	=	make -C
 
 all:
 	$(MAK) ./my

@@ -20,11 +20,9 @@ SRC	=	./my_putstr.c	\
 		./my_show_word_array.c	\
 		./my_str_to_word_array.c	\
 
-SILENT	=	@
+CC	=	gcc
 
-CC	=	$(SILENT)gcc
-
-RM	=	$(SILENT)rm -f
+RM	=	rm -f
 
 CFLAG	=	-Wall -Wextra
 
@@ -38,7 +36,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(COPY) my.h ../../include/
-	$(SILENT)ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 	$(COPY) $(NAME) ../$(NAME)
 	$(COPY) $(NAME) ../../$(NAME)
 
