@@ -50,13 +50,11 @@ MAIN_SRC	=	./main.c
 SRC	+=	$(SRC_PARSING)
 SRC	+=	$(SRC_PATH_FINDER)
 
-SILENT	=	@
+CC	=	gcc
 
-CC	=	$(SILENT)gcc
+RM	=	rm -f
 
-RM	=	$(SILENT)rm -f
-
-MAK	=	$(SILENT)make -C
+MAK	=	make -C
 
 CFLAGS	=	-Wall -Wextra
 
@@ -112,14 +110,14 @@ compile_tests: NAME	:=	$(NAME)_tests
 compile_tests: clean_tests
 compile_tests: update_libs $(OBJ)
 	$(CC) -o $(NAME) $(TEST_FILES) $(OBJ) $(CPPFLAGS) $(LIBFLAGS) $(LIBS)
-	$(SILENT)./$(NAME)
+	./$(NAME)
 
 tests_run: compile_tests
 
 test_coverage: $(OBJ)
 test_coverage:	tests_run
 test_coverage:
-	$(SILENT)gcovr .
+	gcovr .
 
 .PHONY: re fclean clean all debug update_libs	\
 		clean_tests compile_tests tests_run	\
